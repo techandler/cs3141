@@ -8,10 +8,39 @@
 </head>
 <body style="background-color:gray">
 	<div class="header">
-	<hr size=6>
 		MTU Marketplace
-	<hr size=6
+		<!-- menu dropdown button and menu -->
+		<div class="menu">
+		<button onclick="menuFunc()" class="menubtn">
+			Menu
+			</div>
+		<div class="dropdown-content" id="myDropdown">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+		</div>
 	</div>
+<hr size=6>
+
+<!-- Button script -->
+<script>	
+function menuFunc() {
+	document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+	if(!event.target.matches('.menubtn')) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if(openDropdown.classList.contains('show')){
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
+}
+</script>
 	
 </body>
 </html>
